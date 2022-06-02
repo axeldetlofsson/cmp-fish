@@ -1,10 +1,8 @@
-local fish_icons = {
-    Text = "",
-        command = "",
-        argument = '',
-        variable = ''
-}
+local source = {}
 
+source.new = function()
+      return setmetatable({}, { __index = source })
+end
 local shell = {}
 
 function shell.escape(args)
@@ -38,7 +36,6 @@ local function split(inputstr, sep)
     return t
 end
 
-local source = {}
 
 ---Return this source is available in current context or not. (Optional)
 ---@return boolean
